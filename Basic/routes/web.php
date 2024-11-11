@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Middleware\AdminCheck;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {

@@ -1,4 +1,4 @@
-@extends('layouts.main', ['title' => 'Crud index'])
+@extends('layouts.main', ['title' => 'Crud edit'])
 @section('head')
 @endsection
 
