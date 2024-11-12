@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB as FacadesDB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class CategorySeeder extends Seeder
@@ -15,7 +15,7 @@ class CategorySeeder extends Seeder
     {
         for ($i = 0; $i < 10; $i++) {
             $n = Str::random(10);
-            FacadesDB::table('categories')->insert([
+            DB::table('categories')->insert([
 
                 'name' => $n,
                 'slug' => $n,
