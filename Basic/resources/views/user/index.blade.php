@@ -45,6 +45,6 @@
     </tbody>
 </table>
 
-{{-- $users->links() --}}
-{{-- $users->onEachSide(3)->links() --}}
+{{-- {{ $users->links() }} --}}
+{{ $users->onEachSide(3)->links() }}
 @endsection
