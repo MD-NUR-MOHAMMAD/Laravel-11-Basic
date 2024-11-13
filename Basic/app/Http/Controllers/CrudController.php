@@ -12,7 +12,7 @@ class CrudController extends Controller
      */
     public function index()
     {
-        $allUser = Crud::paginate(15);
+        $allUser = Crud::paginate(10);
         return view('crud.index', ['cruds' => $allUser]);
     }
 

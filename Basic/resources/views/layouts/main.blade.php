@@ -14,6 +14,7 @@
 <body>
     <div class="container">
         @include('inc.navbar')
+        @include('inc.flash')
         <div class="row">
             <div class="col-md-9">
                 @yield('content')
