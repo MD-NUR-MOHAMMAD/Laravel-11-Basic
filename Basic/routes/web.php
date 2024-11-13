@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -15,6 +16,8 @@ Route::middleware('admin')->group(function () {
     Route::get('/crud/add', [CrudController::class, 'create'])->name('crud.create');
     Route::get('/crud/edit', [CrudController::class, 'edit'])->name('crud.edit');
     Route::get('/users', [UserController::class, 'index'])->name('users');
+    Route::resource('categories', CategoryController::class);
+
 
 });
 

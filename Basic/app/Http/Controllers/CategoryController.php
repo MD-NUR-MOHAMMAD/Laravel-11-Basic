@@ -12,7 +12,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        echo "Categories Index";
     }
 
     /**
@@ -20,7 +20,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        echo "Categories Create";
     }
 
     /**
@@ -28,7 +28,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo "Categories Store";
     }
 
     /**
@@ -36,7 +36,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        echo "Categories Show";
     }
 
     /**
@@ -44,7 +44,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        echo "Categories Edit";
     }
 
     /**
@@ -52,7 +52,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        echo "Categories Update";
     }
 
     /**
@@ -60,6 +60,6 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        echo "Categories Destroy";
     }
 }
