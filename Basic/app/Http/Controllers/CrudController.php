@@ -12,7 +12,8 @@ class CrudController extends Controller
      */
     public function index()
     {
-        return view('crud.index', ['cruds' => Crud::all()]);
+        $allUser = Crud::paginate(15);
+        return view('crud.index', ['cruds' => $allUser]);
     }
 
     /**
@@ -20,6 +21,7 @@ class CrudController extends Controller
      */
     public function create()
     {
+
         return view('crud.create');
     }
 
