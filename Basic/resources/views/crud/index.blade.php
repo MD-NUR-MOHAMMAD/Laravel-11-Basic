@@ -32,6 +32,7 @@
                 @endforelse
                 </tr>
             </table>
+            <hr>
             {{ $cruds->onEachSide(3)->links() }}
 
         </div>

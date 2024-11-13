@@ -44,7 +44,7 @@
         @endforelse
     </tbody>
 </table>
-
+<hr>
 {{-- {{ $users->links() }} --}}
 {{ $users->onEachSide(3)->links() }}
 @endsection
