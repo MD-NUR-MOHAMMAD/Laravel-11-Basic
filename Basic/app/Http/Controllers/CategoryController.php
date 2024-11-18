@@ -24,7 +24,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        echo "Categories Create";
+       return view('categories.create');
     }
 
     /**
