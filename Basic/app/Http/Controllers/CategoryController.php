@@ -32,7 +32,24 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        echo "Categories Store";
+        $validated = $request->validate([
+            'name' => 'required|unique:categories|max:255',
+            'slug'=>'required|unique:categories|max:255',
+            'description' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'status' => 'required',
+        ]);
+        $imagePath = $request->file('image')->store('category', 'public');
+        $data = [
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'description' => $request->description,
+            'image' => $imagePath,
+            'status' => $request->status,
+        ];
+        // Category::create($request->all());
+        Category::create($data);
+        return redirect()->route('categories.index')->with('success', 'Category created successfully.');
     }
 
     /**
