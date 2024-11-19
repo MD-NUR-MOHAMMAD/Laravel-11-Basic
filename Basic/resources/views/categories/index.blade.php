@@ -31,7 +31,7 @@
                                 <td>{{ $category->name }}</td>
                                 <td>{{ $category->slug }}</td>
                                 <td>{{ $category->description }}</td>
-                                <td><img src="{{ asset('storage/' . $category->image) }}" width="50px"></td>
+                                <td><img src="{{ asset('storage/' . $category->image) }}" width="100px"></td>
                                 <td>{{ $category->status == 1 ? 'Active' : 'Not Active' }}</td>
                                 <td>{{ $category->created_at }}</td>
                                 <td>{{ $category->updated_at }}</td>
