@@ -10,6 +10,8 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/profiletest/{id}', [UserController::class, 'profiletest']);
+
 Route::middleware('admin')->group(function () {
     Route::get('/crud', [CrudController::class, 'index'])->name('crud.index');
     Route::post('/crud/add', [CrudController::class, 'store'])->name('crud.store');
