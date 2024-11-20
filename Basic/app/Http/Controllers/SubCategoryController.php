@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class SubCategoryController extends Controller
 {
@@ -17,12 +18,14 @@ class SubCategoryController extends Controller
         return view('subcategories.index')->with('subcategories', $subcategories);
     }
 
-    /**
+    /**s
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        echo 'hello create';
+        $categories = Category::pluck('name', 'id');
+        // dd($categories);
+        return view('subcategories.create')->with('categories', $categories);
     }
 
     /**
@@ -30,7 +33,9 @@ class SubCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $subcategory = SubCategory::create($request->all());
+        // dd($subcategory);
+        return redirect()->route('subcategories.index', $subcategory)->with('success', 'SubCategory created successfully.');
     }
 
     /**

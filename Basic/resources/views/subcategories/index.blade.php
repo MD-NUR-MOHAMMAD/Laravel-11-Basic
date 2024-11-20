@@ -1,11 +1,11 @@
-@extends('layouts.main', ['title' => 'Categories index'])
+@extends('layouts.main', ['title' => 'Subcategories index'])
 
 @section('content')
     <div class="card">
 
         <div class="card-header">
             <h1 class="text-center">Sub Categories Table <a class="float-end btn btn-primary"
-                    href="{{ route('subcategories.create') }}">Create subcategory</a></h1>
+                    href="{{ route('subcategories.create') }}">Subcategory Create</a></h1>
 
         </div>
         <div class="table-responsive">
@@ -27,10 +27,11 @@
                             <tr>
                                 <td class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ $subcategory->name }}</td>
-                                <td>{{ $subcategory->category->name }}</td>
+                                <td>{{ $subcategory->category}}</td>
                                 <td>{{ $subcategory->slug }}</td>
-                                <td><img src="{{ asset('storage/' . $category->image) }}" width="100px"></td>
-                                <td>{{ $subcategory->status == 1 ? 'Active' : 'Not Active' }}</td>
+                                <td><img src="{{ asset('storage/' . $subcategory->image) }}" width="100px"></td>
+                                <td>{{ $subcategory->status == 1 ? 'Active' : 'Inactive' }}</td>
+                                <td class="text-center">
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <a href="{{ route('subcategories.edit', $subcategory->id) }}"
                                             class="btn btn-sm btn-outline-secondary">
