@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,7 @@ Route::middleware('admin')->group(function () {
     Route::get('/crud/edit', [CrudController::class, 'edit'])->name('crud.edit');
     Route::get('/users', [UserController::class, 'index'])->name('users');
     Route::resource('categories', CategoryController::class);
+    Route::resource('subcategories', SubCategoryController::class);
 
 
 });

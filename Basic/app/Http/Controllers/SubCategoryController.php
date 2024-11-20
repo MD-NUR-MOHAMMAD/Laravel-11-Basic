@@ -12,7 +12,9 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        //
+        // $subcategories = SubCategory::paginate(10);
+        $subcategories = SubCategory::with('category')->paginate(10);
+        return view('subcategories.index')->with('subcategories', $subcategories);
     }
 
     /**
@@ -20,7 +22,7 @@ class SubCategoryController extends Controller
      */
     public function create()
     {
-        //
+        echo 'hello create';
     }
 
     /**
