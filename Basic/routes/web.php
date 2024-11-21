@@ -58,3 +58,5 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+//store
+// model::create(request()->only(['name', 'email', 'password']));
