@@ -4,12 +4,28 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubCategoryController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+
+Route::get('/testlink/morepath/somemorepath/{var1}/{var2}/{var3}', [TestController::class, 'testthreeparam'])->name('test.threepath')->middleware('throttle:100,1');
+
+Route::prefix('userinfo')->group(function () {
+    Route::get('/su/{uid}', [UserController::class, 'showuser'])->where('uid', '[0-9]+');
+});
+
+Route::fallback(function () {
+    return view("notfound");
+   });
+
+
+
+
 
 Route::get('/profiletest/{id}', [UserController::class, 'profiletest']);
 

@@ -81,4 +81,8 @@ class UserController extends Controller
         $result = $u->profile()->save($p);
         dd($result);
     }
+
+    public function showuser($uid){
+        dd(User::find($uid));
+    }
 }
