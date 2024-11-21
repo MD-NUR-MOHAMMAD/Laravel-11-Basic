@@ -4,6 +4,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubCategoryController;
+use App\Http\Controllers\Teacher\AttendenceController;
+use App\Http\Controllers\Teacher\QuizController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +23,12 @@ Route::prefix('userinfo')->group(function () {
 
 Route::fallback(function () {
     return view("notfound");
-   });
+});
+
+Route::namespace('Teacher')->group(function () {
+    Route::get('/attendence/show', [AttendenceController::class, 'viewattendence'])->name('showatt')->middleware('signed');
+    Route::get('/quiz', [QuizController::class, 'index']);
+});
 
 
 
@@ -37,8 +44,6 @@ Route::middleware('admin')->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('users');
     Route::resource('categories', CategoryController::class);
     Route::resource('subcategories', SubCategoryController::class);
-
-
 });
 
 
