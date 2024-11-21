@@ -27,7 +27,7 @@
                             <tr>
                                 <td class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ $subcategory->name }}</td>
-                                <td>{{ $subcategory->category}}</td>
+                                <td>{{ $subcategory->category }}</td>
                                 <td>{{ $subcategory->slug }}</td>
                                 <td><img src="{{ asset('storage/' . $subcategory->image) }}" width="100px"></td>
                                 <td>{{ $subcategory->status == 1 ? 'Active' : 'Inactive' }}</td>
