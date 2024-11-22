@@ -19,6 +19,7 @@ Route::get('/testlink/morepath/somemorepath/{var1}/{var2}/{var3}', [TestControll
 
 Route::prefix('userinfo')->group(function () {
     Route::get('/su/{uid}', [UserController::class, 'showuser'])->where('uid', '[0-9]+');
+    Route::get('/helpertest', [TestController::class, 'helpertest']);
 });
 
 Route::fallback(function () {

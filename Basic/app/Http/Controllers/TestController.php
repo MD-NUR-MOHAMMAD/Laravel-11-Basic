@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use function App\Helpers\myadd;
+use function App\Helpers\mymod;
+use function App\Helpers\mymul;
+use function App\Helpers\mysub;
 
 class TestController extends Controller
 {
@@ -19,7 +22,7 @@ class TestController extends Controller
         return view("welcome2");
     }
     public function helpertest(){
-        echo myadd(2, 3);
+        echo mymod(8, 5);
     }
 
     public function dbone(){
