@@ -24,7 +24,7 @@
                     </thead>
                     <tbody>
                         @foreach ($subcategories as $subcategory)
-                            <tr>
+                            <tr class="{{$subcategory->deleted_at ? 'table-danger' : ''}}">
                                 <td class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ $subcategory->name }}</td>
                                 <td>{{ $subcategory->category }}</td>

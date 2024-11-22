@@ -15,11 +15,16 @@ class SubCategoryController extends Controller
     public function index()
     {
         Log::info('Loading subcategories this page at'. time());
-        Log::warning('Calling Warning at'. time() );
-        Log::error('Loading this page at'. time() );
-        Log::debug(SubCategory::with('category')->paginate(10)->toArray());
-        $subcategories = SubCategory::paginate(10);
-        $subcategories = SubCategory::with('category')->paginate(10);
+        // Log::warning('Calling Warning at'. time() );
+        // Log::error('Loading this page at'. time() );
+        // Log::debug(SubCategory::with('category')->paginate(10)->toArray());
+        // $subcategories = SubCategory::paginate(10);
+        // $subcategories = SubCategory::with('category')->paginate(10);
+
+        //onlyTrashed a soft deleted records show kore
+
+        // $subcategories = SubCategory::with('category')->onlyTrashed()->paginate(10);
+        $subcategories = SubCategory::with('category')->withTrashed()->paginate(10);
         return view('subcategories.index')->with('subcategories', $subcategories);
     }
 
