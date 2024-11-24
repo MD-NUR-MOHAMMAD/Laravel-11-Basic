@@ -24,7 +24,7 @@
                     </thead>
                     <tbody>
                         @foreach ($subcategories as $subcategory)
-                            <tr class="{{$subcategory->deleted_at ? 'table-danger' : ''}}">
+                            <tr class="{{ $subcategory->deleted_at ? 'table-danger' : '' }}">
                                 <td class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ $subcategory->name }}</td>
                                 <td>{{ $subcategory->category }}</td>
@@ -62,4 +62,10 @@
         <hr>
         {{ $subcategories->links() }}
     </div>
+@endsection
+
+@section('script')
+<script>
+    alert('hello ajax in index page');
+</script>
 @endsection
