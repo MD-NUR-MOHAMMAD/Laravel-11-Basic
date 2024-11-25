@@ -3,17 +3,22 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QuerybuilController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\Teacher\AttendenceController;
 use App\Http\Controllers\Teacher\QuizController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
+use GuzzleHttp\Psr7\Query;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+//Query builder
+
+Route::get('/query', [QuerybuilController::class, 'dbone']);
 
 Route::get('/testlink/morepath/somemorepath/{var1}/{var2}/{var3}', [TestController::class, 'testthreeparam'])->name('test.threepath')->middleware('throttle:100,1');
 
