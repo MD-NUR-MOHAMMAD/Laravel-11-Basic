@@ -11,6 +11,7 @@ class QuerybuilController extends Controller
     {
         // $users = DB::table('users')->get();
         $users = DB::select('select * from users');
+        $users = DB::delete("delete from users where id = 20");
 
         $categories = DB::table('categories')
             ->select('id', 'name')
@@ -22,6 +23,6 @@ class QuerybuilController extends Controller
             ->select('category_id')
             ->distinct()
             ->get();
-        dd($categories);
+        dd($users);
     }
 }
