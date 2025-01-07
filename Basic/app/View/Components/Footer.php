@@ -21,6 +21,9 @@ class Footer extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.footer');
+        return view('components.footer', [
+            'yearfrom' => date('Y'),
+            'yearto' => date('Y') + 1,
+        ]);
     }
 }
