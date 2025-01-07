@@ -29,7 +29,10 @@
             </div>
         </div>
         {{-- footer start --}}
-        <x-footer/>
+        <x-footer message="12345678">
+          <h1>testing our footer</h1>
+          <marquee behavior="" direction=""> 1 3 5 7</marquee>
+          </x-footer>
         {{-- <footer class="py-3 my-4">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                 <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
