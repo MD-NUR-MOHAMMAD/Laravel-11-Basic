@@ -30,8 +30,9 @@
         </div>
         {{-- footer start --}}
         <x-footer message="12345678">
-          <h1>testing our footer</h1>
-          <marquee behavior="" direction=""> 1 3 5 7</marquee>
+          <h5>testing our footer</h5>
+          <p>jldjgldjglsdjglsdjg;lksjdgljksd</p>
+          <marquee behavior="" direction="">nfffffffffffffdddddddddddddhhhhhhhhhhhhhht vhhhhhhhhhhhhhhhhffffffff 1 3 5 7</marquee>
           </x-footer>
         {{-- <footer class="py-3 my-4">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
